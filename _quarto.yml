@@ -1,0 +1,10 @@
+project:
+  title: "Final-Project-Report"
+  output-dir: docs
+  type: website
+format: 
+  html: 
+    self-contained: true
+
+bibliography: references.bib
+csl: https://www.zotero.org/styles/apa
