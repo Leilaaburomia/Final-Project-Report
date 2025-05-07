@@ -1,9 +1,0 @@
-[
-  {
-    "objectID": "Final_Project.html#materials",
-    "href": "Final_Project.html#materials",
-    "title": "Final Project Report",
-    "section": "Materials",
-    "text": "Materials\nFor our introduction, we used background literature on what ENSO is and how it is measured along with information about SPI and DSCI, including, what they are, how they are calculated, and their significance in drought monitoring. For our methods, our necessary data included ENSO data from Oceanic Nino Index (ONI), precipitation data in the form of Standardized Precipitation Index (SPI) from drought.gov and Drought Severity and Coverage Index (DSCI) from US drought monitor. Our Rstudio packages we utilized for our data analysis included; “here”, “readxl”, “dplyr”, “tidyr”, “ggplot2”, and “scales”. Lastly, we used Rstudio and Quarto to create and report generation of our project."
-  }
-]

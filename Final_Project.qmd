@@ -10,31 +10,31 @@ execute:
   echo: true
 ---
 
-## ENSO-Drought Linkages in Colorado Counties: A Statistical Perspective
+## El Niño-Southern Oscillation and Drought Linkages in Colorado Counties
 
 # Abstract
 
+The western United States has faced significant hydroclimatic variability in recent decades, with repeated drought events in the 1930s and 1950s. In this study, we use the Standardized Precipitation Index (SPI) and the Drought Severity and Coverage Index (DSCI) to examine linkages between drought severity in Colorado and the El Niño-Southern Oscillation (ENSO). The analysis will focus on five Colorado counties-Kit Carson, Costilla, Larimer, Mesa, and Park. We utilized R to preform correlation analyses and linear regression modeling to determine how ENSO severity correlates with precipitation and drought patterns. Our results show a weak to moderate negative correlation between ENSO severity and SPI in most counties, with Costilla being the exception. Drought Severity and Coverage Index exhibited little to no statically significant correlation across all counties, suggesting that ENSO may have little predictive power for drought severity during it's specific cycle. This finding apposes the common assumption that ENSO increases precipitation in Colorado during El Niño events. We observed a potential temporal lag between ENSO phases and present drought conditions, suggesting that insight may be improved by lagged time-series modeling. This examination highlights the complexity of climate-drought interactions in mountainous regions of the U.S. and demonstrates the importance of long-term data science in environmental research. Potential future work will explore the lagged effects of ENSO on drought conditions to improve understanding for future climate variability.
+
 # Introduction
 
-Over the past decade, the western United States has experienced hydroclimatic variability that has emerged as a dominant environmental issue of great concern (@Balling2007). Since 1996, a considerable portion of the western U.S. has seen drought conditions that are similar in scale to the historical droughts in the 1930s and 1950s (@Balling2007). Studies have also used the paleoclimatic record to reveal evidence of long term droughts over the past 500 to 2,000 years (@Woodhouse1998). Hydroclimatic variability studies range in scale from regional to watershed. This variability is often complex and may require a multitude of scales to fully understand and plan for future drought conditions. In the dry western U.S., Colorado receives less than 17 inches of average annual precipitation statewide. (@Mckee2000). In comparison to the rest of the United States, these rainfall amounts are incredibly sparse. Luckily, Colorado’s Rocky Mountains help alleviate potential water stress by collecting more than 25 inches of precipitation annually (@Mckee2000). By successfully adapting to this dry climate, Colorado supports a massive agricultural and recreational industry and multiple growing urban centers (@Mckee2000). As population and industry grow, the threat of drought and its social, economic, and environmental impacts increase as well. Measuring and assessing drought accurately is essential for future planning. Historical drought data can give valuable insight into influences or indicators of drought conditions. Patterns of climatic variability that aligned with droughts in the past can help our society better prepare for the future. One of these patterns is the influential El Nino and La Nina. El Nino is caused by a warming of the tropical Pacific Ocean that occurs about every three to seven years and lasts for 12-18 months (@McPhaden2002). La Nina is akin to El Nino with stronger than normal trade winds and cooler tropical Pacific water temperatures (@McPhaden2002). In recent decades, the El Nino/Southern Oscillation (ENSO) has been more closely monitored, and the strength of each cycle has been documented. The effects of El Nino and La Nina on climate vary considerably across the globe, but in the western U.S., there is a pattern of impacts. During El Nino years, both extremely wet and dry conditions can be expected, while La Nina years are characterized by only dry conditions (@Canon2007). This research aims to analyze interactions between climatic variability indicating drought and the ENSO cycle. To examine interactions between drought conditions and the El Nino/Southern Oscillation (ENSO), we will utilize a variety of climatic data. To create a framework for drought, we will use the Standardized Precipitation Index (SPI) from the National Integrated Drought Information System to measure how much observed precipitation deviated from the climatological average. This condition can be measured on a variety of time scales, indicating that the SPI can be useful for both short-term and long-term applications (@NASA). The unit of SPI can be interpreted as “standard deviations”. We will also use the Drought Monitor of Colorado from the USDM to assess the severity and extent of drought using their standardized classification system. This data uses six classifications to characterize drought severity: normal conditions, abnormally dry (D0), and four levels of drought (D1 to D4) representing moderate, severe, extreme, and exceptional drought conditions, respectively. Lastly, we will utilize SNOTEL snow pack data from the Natural Resource Conservation Service to supplement our drought framework. In order to compare this data to ENSO cycles, we will examine El Niño and La Niña intensities for each year based on the Oceanic Nino Index (ONI). This index is the standard for NOAA used to classify El Nino and La Nina events in the eastern tropical Pacific (@Null). Events are defined as five consecutive 3-month periods at or above the + 0.5 degrees threshold for warm (El Nino) events and at or below the - 0.5 degrees anomaly for cool (La Nina) events (@Null). To find correlations between our drought framework and ENSO cycles, we will use R software to conduct statistical tests. First, we will preprocess our data by aligning datasets by date. For snowpack and SPI we will standardize to monthly averages and for drought monitor, we will summarize weekly data to monthly. Our statistical methods will include a correlation analysis to test correlations between ENSO index (ONI) and drought variables. We will use the Pearson correlation coefficient to measure the linear relationship. Then we will use ggplot2 to visualize the trends in a scatter plot and add a linear regression line to help visualize the relationship. If the correlation is significant, we will perform a correlation hypothesis test to provide us with the correlation coefficient and p-value. Next, we will conduct a time series analysis of cross-correlation to look for lagged effects of ENSO on drought parameters. We will also use a linear regression model to model SPI and snowpack as a function of ONI. In conclusion, these findings will help us find a relationship between El Nino/La Nina and drought in Colorado. If so, we can produce the evidence through statistical findings and visual representations, such as a scatter plot and a linear regression model. Considering we are living in a society becoming more conscious about climate change and its environmental impacts, such as more extreme drought events, this project will enforce our involvement in the understanding aspects of our global environment and comprehend to an extent on how global processes impact extreme weather.
-
-## Materials
-
-For our introduction, we used background literature on what ENSO is and how it is measured along with information about SPI and DSCI, including, what they are, how they are calculated, and their significance in drought monitoring. For our methods, our necessary data included ENSO data from Oceanic Nino Index (ONI), precipitation data in the form of Standardized Precipitation Index (SPI) from drought.gov and Drought Severity and Coverage Index (DSCI) from US drought monitor. Our Rstudio packages we utilized for our data analysis included; "here", "readxl", "dplyr", "tidyr", "ggplot2", and "scales". Lastly, we used Rstudio and Quarto to create and report generation of our project.
+Over the past decade, the western United States has experienced hydroclimatic variability that has emerged as a dominant environmental issue of great concern (@Balling2007). Since 1996, a considerable portion of the western U.S. has seen drought conditions that are similar in scale to the historical droughts in the 1930s and 1950s (@Balling2007). Studies have also used the paleoclimatic record to reveal evidence of long term droughts over the past 500 to 2,000 years (@Woodhouse1998). Hydroclimatic variability studies range in scale from regional to watershed. This variability is often complex and may require a multitude of scales to fully understand and plan for future drought conditions. In the dry western U.S., Colorado receives less than 17 inches of average annual precipitation statewide. (@Mckee2000). In comparison to the rest of the United States, these rainfall amounts are incredibly sparse. Luckily, Colorado’s Rocky Mountains help alleviate potential water stress by collecting more than 25 inches of precipitation annually (@Mckee2000). By successfully adapting to this dry climate, Colorado supports a massive agricultural and recreational industry and multiple growing urban centers (@Mckee2000). As population and industry grow, the threat of drought and its social, economic, and environmental impacts increase as well. Measuring and assessing drought accurately is essential for future planning. Historical drought data can give valuable insight into influences or indicators of drought conditions. Patterns of climatic variability that aligned with droughts in the past can help our society better prepare for the future. One of these patterns is the influential El Niño and La Niña. El Niño is caused by a warming of the tropical Pacific Ocean that occurs about every three to seven years and lasts for 12-18 months (@McPhaden2002). La Niña is akin to El Niño with stronger than normal trade winds and cooler tropical Pacific water temperatures (@McPhaden2002). In recent decades, the El Niño /Southern Oscillation (ENSO) has been more closely monitored, and the strength of each cycle has been documented. The effects of El Niño and La Niña on climate vary considerably across the globe, but in the western U.S., there is a pattern of impacts. During El Niño years, both extremely wet and dry conditions can be expected, while La Niña years are characterized by only dry conditions (@Canon2007). This research aims to analyze interactions between climatic variability indicating drought and the ENSO cycle. To analyze potential relationships we will look at correlations within 4 Colorado counties; Kit Carson, Costilla, Larimer, Mesa, and Park. To examine interactions between drought conditions and the El Niño /Southern Oscillation (ENSO), we will utilize a variety of climatic data. To create a framework for drought, we will use the Standardized Precipitation Index (SPI) from the National Integrated Drought Information System to measure how much observed precipitation deviated from the climatological average. This condition can be measured on a variety of time scales, indicating that the SPI can be useful for both short-term and long-term applications (@NASA). The unit of SPI can be interpreted as “standard deviations”. We will also use the Drought Monitor of Colorado from the USDM (Drought Severity and Coverage Index) to assess the severity and extent of drought using their standardized classification system. This DSCI data uses six classifications to characterize drought severity: normal conditions, abnormally dry (D0), and four levels of drought (D1 to D4) representing moderate, severe, extreme, and exceptional drought conditions, respectively. In order to compare this data to ENSO cycles, we will examine El Niño and La Niña intensities for each year based on the Oceanic Niño Index (ONI). This index is the standard for NOAA used to classify El Niño and La Niña events in the eastern tropical Pacific (@Null). Events are defined as five consecutive 3-month periods at or above the + 0.5 degrees threshold for warm (El Niño ) events and at or below the - 0.5 degrees anomaly for cool (La Nina) events (@Null). To find correlations between our drought framework and ENSO cycles, we will use R software to conduct statistical tests. First, we will preprocess our data by aligning data sets by date. For SPI and DSCI we will standardize to 3 month rolling averages in order for our data to align with ENSO data. Three month rolling averages are beneficial in revealing more meaningful trends in drought conditions and precipitation anomalies. Our statistical methods will include a correlation analysis to test correlations between ENSO index (ONI) and drought variables. We will use the Pearson correlation coefficient to measure the linear relationship within the 4 Colorado counties. Then we will use ggplot2 to visualize the trends in a scatter plot and add a linear regression line to help visualize the relationship. If the correlation is significant, we will perform a correlation hypothesis test to provide us with the correlation coefficient and p-value. Next, we will conduct a time series analysis of cross-correlation to look for effects of ENSO on drought parameters. These findings will help us find a relationship between El Niño/La Niña and drought in Colorado. Considering we are living in a society becoming more conscious about climate change and its environmental impacts, such as more extreme drought events, this project will enforce our involvement in the understanding aspects of our global environment and comprehend to an extent on how global processes impact extreme weather. This project aims to examine the relationship between ENSO (El Niño -Southern Oscillation) using the Oceanic Niño Index and drought conditions in 5 Colorado counties (Kit Carson, Costilla, Larimer, Mesa, and Park) using SPI and DSCI data. Our hypothesis states that there is a statistically significant correlation between ENSO phases and drought severity in Colorado counties, with La Niña conditions associated with increased drought severity and El Niño conditions associated with more variable precipitation.
 
 # Methods
 
-There are several methods we have chosen and implemented in our analysis. To begin, row #1 was changed to column names and converted the date from numeric to date from our dataset. Secondly, the data was cleaned and reshaped by choosing the most important columns (SPI, DSCI, ENSO, and Date), changing the names (ENSO severity to type, adding underscores to all column names), and converting severity and value to being numeric.\
-\
-Afterwards, codes were run to visualize a relationship between ENSO (severity) and SPI as well as DSCI per county. Graphs were made to give us a visual on each relationship, where the X-axis is the ENSO severity and the y-axis is the rolling SPI/DSCI average.
+This research utilizes a multi-step data science approach to examine the relationship between drought variability and ENSO phases across five Colorado counties. We integrated data sets from multiple sources, including ENSO data from Oceanic Niño Index (ONI) (@Null), precipitation data in the form of Standardized Precipitation Index (SPI) from drought.gov (@NOAA) and Drought Severity and Coverage Index (DSCI) from US drought monitor (@Simeral2025).
 
-Then, a statistical test was run using Pearson to find a correlation between each county (Kit Carson, Costilla, Larimer, Mesa, Park) and ENSO severity (include Value) and run a linear regression model for each county.
+There are several methods we have chosen and implemented in our analysis. To begin, ENSO, SPI, and DSCI data were combined into one data set separated by county. each row is based off a three month rolling average of drought data points. The data ranged from the beginning of 2020 to the October 1st, 2024. Data preprocessing is as follows. Row #1 was changed to column names and converted the date from numeric to date from our dataset. Secondly, the data was cleaned and reshaped by choosing the most important columns (SPI, DSCI, ENSO, and Date), changing the names (ENSO severity to type, adding underscores to all column names), and converting severity and value from character to numeric format. The data was converted from wide format (many columns for different counties) to long format, creating two new columns, Variable (the original column names) and Value (the actual data values). The variable column was split into Metric_type and County.
 
-Time series was also implemented, where a left join was done (date and rolling 3 month date), created a “center date” for each rolling period (where each acronym is assigned to a number that correlates to the month), and mutating the center month, year, and rolling date.
+R code was created and saved a plot to visualize the relationship between ENSO severity and SPI per county. From the long-form dataset, only kept rows where the metric type is Rolling SPI Average. The scatter plot showed the X-axis as ENSO severity and the y-axis as the rolling SPI average, with color representing different counties. Individual data points and a linear regression line were added to the plot. The axis tick labels were formatted for readability and 'theme_minimal()' was chosen for a simple plot theme. Lastly, the finished plot was added to the 'images' folder as a PNG file. This process was repeated to visualize the relationship between ENSO and DSCI.
 
-As for creating visualizations for the time series, a mutation was made to categorize each ENSO phase/type to either El Nino or La Nina. ENSO bands were created by selecting the rolling data and the categorization of ENSO, distinct, arrange by rolling date, added a column where a lag was run based on the ENSO phase, group by ENSO phase, and summarise (min and max are rolling date, where the group is “drop”. Visualizations were made for each relationship (SPI and DSCI for ENSO), where the X-axis is the date and y-axis is the rolling SPI/DSCI average, ENSO phase was implemented for each section of the time (El Nino, La Nina, neutral, NA), and the counties were implemented. The graphs were faceted that show 5 graphs, each representing each county.
+A statistical test was run using Pearson to find a correlation between each county (Kit Carson, Costilla, Larimer, Mesa, Park) and ENSO severity (include Value) and run a linear regression model for each county. To calculate Pearson correlation for SPI, we filtered the data to use only SPI values and group the data by County. This was repeated for DSCI by filtering for DSCI instead of SPI. The linear regression model was run by again filtering for either SPI or DSCI first and grouping by County. The linear regression model was run using SPI value (or DSCI) as the response variable and ENSO severity as the predictor.
 
-Each method was implemented correctly based on changing our dataset, using the most important sections of the data, generating graphs to find a relationship, running statistical tests to have a concise number for understanding the data and relationship, and then implementing time series models for both relationships.
+Time series modeling was implemented. A left join was created (date and rolling 3 month date), created a “center date” for each rolling period (where each acronym is assigned to a number that correlates to the month), and mutating the center month, year, and rolling date.
+
+For time series visualizations, 'mutate()' was used to categorize each ENSO phase/type to either El Nino or La Nina. ENSO bands were created by selecting the rolling data and the categorization of ENSO, distinct, arrange by rolling date, added a column where a lag was run based on the ENSO phase, group by ENSO phase, and summarise (min and max are rolling date, where the group is “drop”. Visualizations were made for each relationship (SPI and DSCI for ENSO), where the X-axis is the date and y-axis is the rolling SPI/DSCI average, ENSO phase was implemented for each section of the time (El Nino, La Nina, neutral, NA), and the counties were implemented. The graphs were faceted that show 5 graphs, each representing each county.
+
+Each method was implemented correctly based on dataset processing, using the most important sections of the data, generating graphs to find a relationship, running statistical tests to have a concise number for understanding the data and relationship, and then implementing time series models for both relationships.
 
 # Results
 
@@ -54,8 +54,6 @@ data1$`Date (for Reference)` <- as.Date(as.numeric(data1$`Date (for Reference)`)
 ```
 
 ### Clean and Reshape Data
-
-To make the data easier to analyze across multiple counties, we will pivot the data into a long format using tidyr.
 
 ```{r}
 library(dplyr)
@@ -98,7 +96,7 @@ library(ggplot2)
 library(scales)
 library(dplyr)
 
-ggplot(long_data %>% filter(Metric_Type == "Rolling SPI Average"),
+ENSO_Rolling_SPI_plot <- ggplot(long_data %>% filter(Metric_Type == "Rolling SPI Average"),
        aes(x = `ENSO_Severity`, y = Value, color = County)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -107,12 +105,19 @@ ggplot(long_data %>% filter(Metric_Type == "Rolling SPI Average"),
    scale_y_continuous(labels = number_format(accuracy = 0.01)) +  
   scale_x_continuous(labels = number_format(accuracy = 0.1)) +   
   theme_minimal()
+
+ENSO_Rolling_SPI_plot
+
+
+ggsave("images/ENSO_Rolling_SPI_plot.png", plot = ENSO_Rolling_SPI_plot, width = 6, height = 4, dpi = 300)
 ```
+
+North (-0.37), East (-0.14), West (-0.24), and Central (-0.32) counties (Larimer, Kit Carson, Mesa, and Park, respectfully), show a negative weak to moderate correlation between ENSO severity and rolling SPI average. The Southern county, Costilla (0.08) exhibited a weak positive correlation between ENSO severity and rolling SPI average.
 
 #### ENSO Severity and Rolling DSCI Average
 
 ```{r}
-ggplot(long_data %>% filter(Metric_Type == "Rolling DSCI Average"),
+ENSO_Rolling_DSCI_plot <- ggplot(long_data %>% filter(Metric_Type == "Rolling DSCI Average"),
        aes(x = `ENSO_Severity`, y = Value, color = County)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -121,7 +126,14 @@ ggplot(long_data %>% filter(Metric_Type == "Rolling DSCI Average"),
    scale_y_continuous(labels = number_format(accuracy = 0.01)) +  
   scale_x_continuous(labels = number_format(accuracy = 0.1)) +   
   theme_minimal()
+
+
+ENSO_Rolling_DSCI_plot
+
+ggsave("images/ENSO_Rolling_DSCI_plot.png", plot = ENSO_Rolling_DSCI_plot, width = 6, height = 4, dpi = 300)
 ```
+
+Mesa (0.07) and Costilla (0.02) county show a weak positive correlation between ENSO severity and rolling DSCI average. Larimer (-0.07) and Kit Carson (-0.1) county show a weak negative correlation, and Park county (-0.004) shows practically no correlation between ENSO severity and rolling DSCI average.
 
 ### Statistical Tests
 
@@ -135,6 +147,7 @@ SPI_cor_results <- long_data %>%
 
 print(SPI_cor_results)
 
+
 # Linear Regression by county SPI
 SPI_lm_results <- long_data %>%
   filter(Metric_Type == "Rolling SPI Average") %>%
@@ -143,6 +156,8 @@ SPI_lm_results <- long_data %>%
 
 print(SPI_lm_results)
 ```
+
+
 
 ```{r}
 
@@ -235,7 +250,7 @@ ggplot() +
   theme_minimal()
 
 # Faceted Trends 
-ggplot() +
+Faceted_Time_Series_SPI <- ggplot() +
   # ENSO shaded bands across all facets
   geom_rect(data = enso_bands,
             aes(xmin = start, xmax = end, ymin = -Inf, ymax = Inf, fill = ENSO_Phase),
@@ -250,12 +265,16 @@ ggplot() +
        fill = "ENSO Phase", color = "County") +
   theme_minimal()
 
+Faceted_Time_Series_SPI
+
+ggsave("images/Faced_Time_Series_SPI.png", plot = Faceted_Time_Series_SPI, width = 10, height = 4, dpi = 300)
+
 ```
 
 #### Time Series Visualizations for DSCI and ENSO
 
 ```{r}
-ggplot() +
+Faceted_Time_Series_DSCI <- ggplot() +
   geom_rect(data = enso_bands,
             aes(xmin = start, xmax = end, ymin = -Inf, ymax = Inf, fill = ENSO_Phase),
             alpha = 0.2, inherit.aes = FALSE) +
@@ -267,6 +286,8 @@ ggplot() +
        x = "Date", y = "Rolling DSCI Average",
        fill = "ENSO Phase", color = "County") +
   theme_minimal()
+
+ggsave("images/Faced_Time_Series_DSCI.png", plot = Faceted_Time_Series_DSCI, width = 10, height = 4, dpi = 300)
 
 ```
 
@@ -294,7 +315,7 @@ ggplot() +
 
 Our data implies that there is an overall negative association between ENSO severity and SPI values, and no significant relationship between ENSO severity and DSCI values. This goes against what we previously believed. We were under the assumption that a higher ENSO value (Stronger El Niño seasons), would result in higher precipitation values, leading to reduced drought conditions. Our initial assumption is true for the southern part of Colorado (Costilla County), but after looking at the statistical analyses, we can see that this correlation between both ENSO & SPI, and ENSO & DSCI is very weak, and not significant.
 
-There are a few limits to our analysis, but one big one stands out. There is most likely a lag between ENSO severity seasons, and drought conditions being present. For example, if there is a strong La Niña event in January of a particular year, there would most likely be around 3 months before drought is reported. There also might be a shorter lag between ENSO severity and precipitation measurements. Other limits may include: small sampling size. Including more counties might get us a better picture. To clean the data, we had to average 3 or 4 monthly drought values to line up with our ENSO severity values, and SPI values. There may be data hidden in a more complex analysis.
+There are a few limitations to our analysis, but one is most prominent. There is most likely a lag between ENSO severity seasons, and drought conditions being present. For example, if there is a strong La Niña event in January of a particular year, it would be around 3 months before drought is reported. There also might be a shorter lag between ENSO severity and precipitation measurements. Other limits may include: small sampling size. Including more counties might get us a better picture. To clean the data, we had to average 3 or 4 monthly drought values to line up with our ENSO severity values, and SPI values. There may be data hidden in a more complex analysis.
 
 Our findings go against findings presented in an article published by NOAA. In the article, the author states that during La Niña years, the southwest tends to experience more dry conditions compared to El Niño years. However, looking at interactive graphs linked to the article, Colorado doesn’t seem to follow trends of drought seen in other southwestern states. This could explain why our data is pointing to a weak, negative correlation between ENSO severity, and drought and precipitation patterns.
 
